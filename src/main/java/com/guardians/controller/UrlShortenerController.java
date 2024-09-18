@@ -1,7 +1,7 @@
 package com.guardians.controller;
 
 
-import com.guardians.dto.UrlRequestDto;
+import com.guardians.dto.UrlRequest;
 import com.guardians.dto.UrlMappingDto;
 import com.guardians.model.UrlMapping;
 import com.guardians.service.UrlShortenerServiceImpl;
@@ -24,7 +24,7 @@ public class UrlShortenerController {
     }
 
     @PostMapping("/shorten")
-    public ResponseEntity<UrlMapping> createShortUrl(@RequestBody UrlRequestDto urlRequest) {
+    public ResponseEntity<UrlMapping> createShortUrl(@RequestBody UrlRequest urlRequest) {
         // Use the data from the request body
         UrlMapping urlMapping = urlShortenerService.createShortUrl(urlRequest);
         return ResponseEntity.ok(urlMapping);
