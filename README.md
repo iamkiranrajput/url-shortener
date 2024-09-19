@@ -146,6 +146,3 @@ GET /api/url/all?pageNumber=0&pageSize=5&sortBy=createdAt&dir=asc
 ## License
 
 This project is licensed under the MIT License.
-
----
-This `README.md` should provide a comprehensive guide for developers and users to understand and contribute to your URL Shortener project.
