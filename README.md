@@ -144,5 +144,5 @@ GET /api/url/all?pageNumber=0&pageSize=5&sortBy=createdAt&dir=asc
 4. Submit a pull request with a detailed description of your changes.
 
 ## License
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-This project is licensed under the MIT License.
