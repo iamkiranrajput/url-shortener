@@ -1,12 +1,15 @@
 package com.guardians.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class UrlMappingDto {
     private Long id;
     private String originalUrl;
@@ -15,4 +18,7 @@ public class UrlMappingDto {
     private LocalDateTime expiresAt;
     private int usageLimit;
     private int usageCount;
+
+
+
 }
