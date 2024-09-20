@@ -35,7 +35,6 @@ class UrlShortnerApplicationTests {
 
 	@Test
 	void contextLoads() {
-		// Ensure the Spring Boot application context loads properly
 	}
 
 	@Test
