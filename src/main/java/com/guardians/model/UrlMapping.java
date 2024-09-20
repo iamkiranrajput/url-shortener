@@ -2,10 +2,7 @@ package com.guardians.model;
 
 
 import com.guardians.dto.UrlMappingDto;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +10,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
+@Table(name = "url_table")
 public class UrlMapping {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
