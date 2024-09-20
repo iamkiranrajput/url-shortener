@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -96,6 +96,16 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>  <!-- Ensure you are using a compatible version -->
+				<configuration>
+					<source>17</source>  <!-- Use Java 17 as the source version -->
+					<target>17</target>  <!-- Use Java 17 as the target version -->
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
