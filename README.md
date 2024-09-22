@@ -148,7 +148,7 @@ GET /api/url/all?pageNumber=0&pageSize=5&sortBy=createdAt&dir=asc
 ## Testing the API
 
 To test the API, you can use Postman. You can download the source code or Docker container and run it. Set the environment variable with the name `{url}` to `http://localhost:8181`. Alternatively, if you haven't set up the project yet, you can use the live demo at [http://url.work.gd](http://url.work.gd).
-swagger-ui documentation [http://url.work.gd/api/url/swagger-ui.html](http://url.work.gd/api/url/swagger-ui.html)
+swagger-ui documentation [http://url.work.gd/api/url/swagger-ui.html](http://url.work.gd/swagger-ui.html)
 ## Reference Documentation
 
 For a comprehensive understanding of the API, you can refer to the [Postman API Collection](https://www.postman.com/glitch-guardians/workspace/guardians/collection/33641536-8f994d74-f358-4117-bee2-086a42aef3d0?action=share&creator=33641536&active-environment=33641536-16d30508-b9a8-46c2-8246-623ca81702a9) or view the documentation via Swagger once the application is running.
