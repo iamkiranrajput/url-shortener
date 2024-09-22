@@ -1,7 +1,7 @@
 # URL Shortener Project Setup
 
 This document provides step-by-step instructions to set up the URL Shortener project. Users can choose to run the application using either an in-memory H2 database, a PostgreSQL database, or an H2 database via Docker containers.
- if you haven't set up the project yet, you can use the live demo at [http://url.work.gd](http://url.work.gd). [swagger-ui documentation](http://url.work.gd/api/url/swagger-ui.html)
+ if you haven't set up the project yet, you can use this api for testing [http://url.work.gd](http://url.work.gd) | [swagger-ui documentation](http://url.work.gd/api/url/swagger-ui.html)
 ## Setup Options
 
 ### Option 1: Using In-Memory H2 Database or with postgres
