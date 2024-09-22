@@ -9,11 +9,11 @@ The URL Shortener project is a Spring Boot-based application that allows users t
 ## Quick Links
 
 - **Postman Documentation**: [Postman API Collection Documentation](https://www.postman.com/glitch-guardians/workspace/guardians/collection/33641536-8f994d74-f358-4117-bee2-086a42aef3d0?action=share&creator=33641536&active-environment=33641536-16d30508-b9a8-46c2-8246-623ca81702a9)
-- **Swagger OpenAPI Documentation Runnig Appllication**: [Swagger UI](http://url.work.gd/api/url/swagger-ui.html) [http://url.work.gd/api/url/](http://url.work.gd/api/url)
+- **Swagger OpenAPI Documentation Runnig Appllication**: [Swagger UI](http://url.work.gd/swagger-ui.html) | [http://url.work.gd/api/url/](http://url.work.gd/api/url)
 - **Docker Hub Images**:
   - [URL Shortener with H2 Database](https://hub.docker.com/r/iamkiranrajput/url-shortener:dbh2)
   - [URL Shortener with PostgreSQL](https://hub.docker.com/r/iamkiranrajput/url-shortener:latest)
-- **Setup the Project** [setup](SETUP.md)
+- **Setup the Project** [setup](setup.md)
 
 ---
 
