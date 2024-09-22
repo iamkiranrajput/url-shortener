@@ -1,7 +1,5 @@
 # URL Shortener Service
 
-## Project Overview
-
 The URL Shortener project is a Spring Boot-based application that allows users to shorten URLs, track their usage, set expiration dates, and implement usage limits. The project also features pagination and sorting for the shortened URLs, along with comprehensive logging and exception handling.
 
 ## Quick Links
