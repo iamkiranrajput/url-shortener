@@ -2,17 +2,17 @@
 
 ## Project Overview
 
-The URL Shortener project is a Spring Boot-based application that allows users to shorten URLs, track their usage, set expiration dates, and implement usage limits. The project also features pagination and sorting for the shortened URLs, and comprehensive logging and exception handling.
+The URL Shortener project is a Spring Boot-based application that allows users to shorten URLs, track their usage, set expiration dates, and implement usage limits. The project also features pagination and sorting for the shortened URLs, along with comprehensive logging and exception handling.
 
-## Feature
-- URL shortening with customizable expiration dates and usage limits.
-- Detailed tracking of URL usage.
-- Support for pagination and sorting.
-- Logging and exception handling for error tracking.
+## Features
+- **URL Shortening**: Create short links with customizable expiration dates and usage limits.
+- **Usage Tracking**: Monitor how many times a short URL has been accessed.
+- **Pagination and Sorting**: Easily navigate through shortened URLs with pagination and sorting options.
+- **Logging and Exception Handling**: Keep track of errors and important events in the application.
 
 ## Technology Stack
 - **Java**: Core language for business logic.
-- **Spring Boot**: Framework for the application.
+- **Spring Boot**: Framework for building the application.
 - **JPA/Hibernate**: ORM for data persistence.
 - **H2 Database**: In-memory database for testing.
 - **Lombok**: Reduces boilerplate code.
@@ -71,7 +71,7 @@ src/
 - The application uses an in-memory H2 database for ease of development and testing.
 - You can configure the `application.properties` file to point to a persistent database like MySQL or PostgreSQL for production.
 
-Here is a sample configuration for H2:
+### Sample Configuration for H2:
 ```properties
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver
@@ -108,12 +108,10 @@ spring.jpa.hibernate.ddl-auto=update
 
 - **Global Exception Handling**: The project includes a `GlobalExceptionHandler` to handle specific exceptions like `ShortUrlNotFoundException` and more general ones, ensuring a uniform error response structure.
 
-
-### Custom Exception
-
- `PaginationException`: Thrown when an error occurs during pagination, handled with a custom response.
-`UrlNotFoundException`: Thrown when a URL cannot be found, handled with a custom response to inform users that the requested URL does not exist.
-`GlobalException`: Catches any general exceptions not specifically handled elsewhere, providing a standardized error message for unexpected issues.
+### Custom Exceptions
+- `PaginationException`: Thrown when an error occurs during pagination, handled with a custom response.
+- `UrlNotFoundException`: Thrown when a URL cannot be found, handled with a custom response to inform users that the requested URL does not exist.
+- `GlobalException`: Catches any general exceptions not specifically handled elsewhere, providing a standardized error message for unexpected issues.
 
 ## Pagination and Sorting
 
@@ -122,8 +120,7 @@ The project supports pagination and sorting when fetching URLs.
 - **Pagination**: Implemented using `PageRequest` and the `Pageable` interface.
 - **Sorting**: URLs can be sorted by any field, such as creation date, using the `sortBy` and `dir` (ascending/descending) parameters.
 
-Example endpoint:
-
+### Example Endpoint for Pagination:
 ```bash
 GET /api/url/all?pageNumber=0&pageSize=5&sortBy=createdAt&dir=asc
 ```
@@ -136,6 +133,14 @@ GET /api/url/all?pageNumber=0&pageSize=5&sortBy=createdAt&dir=asc
 | `GET`       | `/api/url/{shortUrl}`  | Redirect to the original URL     |
 | `GET`       | `/api/url/all`         | Fetch all URLs (with pagination) |
 
+## Testing the API
+
+To test the API, you can use Postman. You can download the source code or Docker container and run it. Set the environment variable with the name `{url}` to `http://localhost:8181`. Alternatively, if you haven't set up the project yet, you can use the live demo at [https://url.work.gd](https://url.work.gd).
+
+## Reference Documentation
+
+For a comprehensive understanding of the API, you can refer to the [Postman API Collection](https://www.postman.com/glitch-guardians/workspace/guardians/collection/33641536-8f994d74-f358-4117-bee2-086a42aef3d0?action=share&creator=33641536&active-environment=33641536-16d30508-b9a8-46c2-8246-623ca81702a9) or view the documentation via Swagger once the application is running.
+
 ## Contributing
 
 1. Fork the repository.
@@ -145,4 +150,3 @@ GET /api/url/all?pageNumber=0&pageSize=5&sortBy=createdAt&dir=asc
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
