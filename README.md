@@ -13,7 +13,7 @@ The URL Shortener project is a Spring Boot-based application that allows users t
 - **Docker Hub Images**:
   - [URL Shortener with H2 Database](https://hub.docker.com/r/iamkiranrajput/url-shortener:dbh2)
   - [URL Shortener with PostgreSQL](https://hub.docker.com/r/iamkiranrajput/url-shortener:latest)
-- **Setup the Project** [setup](SETUP)
+- **Setup the Project** [setup](SETUP.md)
 
 ---
 
