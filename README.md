@@ -1,21 +1,30 @@
 # URL Shortener Service
 
-## Project Overview
-
 The URL Shortener project is a Spring Boot-based application that allows users to shorten URLs, track their usage, set expiration dates, and implement usage limits. The project also features pagination and sorting for the shortened URLs, along with comprehensive logging and exception handling.
+
+
+## Quick Links
+
+- **Postman Documentation**: [Postman API Collection Documentation](https://www.postman.com/glitch-guardians/workspace/guardians/collection/33641536-8f994d74-f358-4117-bee2-086a42aef3d0?action=share&creator=33641536&active-environment=33641536-16d30508-b9a8-46c2-8246-623ca81702a9)
+- **Docker Hub Images**:
+  - [URL Shortener with H2 Database](https://hub.docker.com/r/iamkiranrajput/url-shortener) use tag :dbh2
+  - [URL Shortener with PostgreSQL](https://hub.docker.com/r/iamkiranrajput/url-shortener) use tag :latest
+- **Setup the Project** [setup](setup.md)
 
 ## Features
 - **URL Shortening**: Create short links with customizable expiration dates and usage limits.
 - **Usage Tracking**: Monitor how many times a short URL has been accessed.
 - **Pagination and Sorting**: Easily navigate through shortened URLs with pagination and sorting options.
 - **Logging and Exception Handling**: Keep track of errors and important events in the application.
+- **OpenAPI Documentation**: Swagger UI and OpenAPI documentation for easy API exploration.
 
 ## Technology Stack
 - **Java**: Core language for business logic.
 - **Spring Boot**: Framework for building the application.
 - **JPA/Hibernate**: ORM for data persistence.
-- **H2 Database**: In-memory database for testing.
-- **Lombok**: Reduces boilerplate code.
+- **PostgreSQL**: Persistent database option for production usage.
+- **H2 Database**: In-memory database for development and testing.
+- **Lombok**: Java library to minimize boilerplate code.
 - **Maven**: Dependency management.
 
 ## Installation
@@ -30,7 +39,7 @@ The URL Shortener project is a Spring Boot-based application that allows users t
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/url-shortener.git
+   git clone https://github.com/iamkiranrajput/url-shortener.git
    ```
 
 2. Navigate to the project directory:
@@ -81,16 +90,17 @@ spring.jpa.hibernate.ddl-auto=update
 ```
 
 ## Usage
-
+ refer to the [Postman API Collection Documentation ](https://www.postman.com/glitch-guardians/workspace/guardians/collection/33641536-8f994d74-f358-4117-bee2-086a42aef3d0?action=share&creator=33641536&active-environment=33641536-16d30508-b9a8-46c2-8246-623ca81702a9) or view the documentation via Swagger once the application is running.
+ 
 ### Shorten a URL
 
 - Send a POST request to `/api/url/shorten` with the following payload:
 
 ```json
 {
-    "originalUrl": "https://www.example.com",
-    "expiresAt": "2024-12-31T23:59:59",
-    "usageLimit": 100
+    "originalUrl": "https://www.x.com/iamkiranrajput",
+    "expiresAt": "2025-12-31T23:59:59",
+    "usageLimit": 7
 }
 ```
 
@@ -135,10 +145,9 @@ GET /api/url/all?pageNumber=0&pageSize=5&sortBy=createdAt&dir=asc
 
 ## Testing the API
 
-To test the API, you can use Postman. You can download the source code or Docker container and run it. Set the environment variable with the name `{url}` to `http://localhost:8181`. Alternatively, if you haven't set up the project yet, you can use the live demo at [https://url.work.gd](https://url.work.gd).
+To test the API, you can use Postman. You can download the source code or Docker container and run it. Set the environment variable with the name `{url}` to `http://localhost:8181`.
 
 ## Reference Documentation
-
 For a comprehensive understanding of the API, you can refer to the [Postman API Collection](https://www.postman.com/glitch-guardians/workspace/guardians/collection/33641536-8f994d74-f358-4117-bee2-086a42aef3d0?action=share&creator=33641536&active-environment=33641536-16d30508-b9a8-46c2-8246-623ca81702a9) or view the documentation via Swagger once the application is running.
 
 ## Contributing
