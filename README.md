@@ -5,7 +5,7 @@ The URL Shortener project is a Spring Boot-based application that allows users t
 
 ## Quick Links
 
-- **Postman Documentation**: [Postman API Collection Documentation](https://www.postman.com/glitch-guardians/workspace/guardians/collection/33641536-8f994d74-f358-4117-bee2-086a42aef3d0?action=share&creator=33641536&active-environment=33641536-16d30508-b9a8-46c2-8246-623ca81702a9)
+- **Postman Documentation**: [Postman API Collection Documentation](https://elements.getpostman.com/redirect?entityId=33641536-8f994d74-f358-4117-bee2-086a42aef3d0&entityType=collection)
 - **Docker Hub Images**:
   - [URL Shortener with H2 Database](https://hub.docker.com/r/iamkiranrajput/url-shortener) use tag :dbh2
   - [URL Shortener with PostgreSQL](https://hub.docker.com/r/iamkiranrajput/url-shortener) use tag :latest
@@ -90,7 +90,7 @@ spring.jpa.hibernate.ddl-auto=update
 ```
 
 ## Usage
- refer to the [Postman API Collection Documentation ](https://www.postman.com/glitch-guardians/workspace/guardians/collection/33641536-8f994d74-f358-4117-bee2-086a42aef3d0?action=share&creator=33641536&active-environment=33641536-16d30508-b9a8-46c2-8246-623ca81702a9) or view the documentation via Swagger once the application is running.
+ refer to the [Postman API Collection Documentation ](https://elements.getpostman.com/redirect?entityId=33641536-8f994d74-f358-4117-bee2-086a42aef3d0&entityType=collection) or view the documentation via Swagger once the application is running.
  
 ### Shorten a URL
 
@@ -148,7 +148,7 @@ GET /api/url/all?pageNumber=0&pageSize=5&sortBy=createdAt&dir=asc
 To test the API, you can use Postman. You can download the source code or Docker container and run it. Set the environment variable with the name `{url}` to `http://localhost:8181`.
 
 ## Reference Documentation
-For a comprehensive understanding of the API, you can refer to the [Postman API Collection](https://www.postman.com/glitch-guardians/workspace/guardians/collection/33641536-8f994d74-f358-4117-bee2-086a42aef3d0?action=share&creator=33641536&active-environment=33641536-16d30508-b9a8-46c2-8246-623ca81702a9) or view the documentation via Swagger once the application is running.
+For a comprehensive understanding of the API, you can refer to the [Postman API Collection](https://elements.getpostman.com/redirect?entityId=33641536-8f994d74-f358-4117-bee2-086a42aef3d0&entityType=collection) or view the documentation via Swagger once the application is running.
 
 ## Contributing
 
