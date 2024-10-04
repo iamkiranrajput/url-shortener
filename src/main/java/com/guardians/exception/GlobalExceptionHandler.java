@@ -58,4 +58,16 @@ public class GlobalExceptionHandler {
         response.setStatus(HttpStatus.BAD_REQUEST.value());
         return  new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
+
+
+    @ExceptionHandler(AlreadyRatedException.class)
+    public ResponseEntity<UrlResponse> handleAlreadyRatedException(AlreadyRatedException ex){
+        log.error("Already Rated: {}",ex.getMessage(),ex);
+        UrlResponse response = new UrlResponse();
+        response.setMessage("You Already given rating :: "+ex.getMessage());
+        response.setStatus(HttpStatus.BAD_REQUEST.value());
+        return  new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+
 }
