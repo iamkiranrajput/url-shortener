@@ -2,6 +2,7 @@ package com.guardians.controller;
 
 
 import com.guardians.AppConstant;
+import com.guardians.auth.entities.User;
 import com.guardians.dto.UrlPageResponse;
 import com.guardians.dto.UrlRequest;
 import com.guardians.dto.UrlResponse;
@@ -10,12 +11,13 @@ import com.guardians.service.UrlShortenerService;
 import com.guardians.service.UrlShortenerServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 
 @RestController
-@RequestMapping("/api/url")
 public class UrlShortenerController {
 
     private final UrlShortenerService urlShortenerService;
@@ -26,7 +28,6 @@ public class UrlShortenerController {
 
     @PostMapping("/shorten")
     public ResponseEntity<UrlResponse> createShortUrl(@RequestBody UrlRequest urlRequest) {
-
         UrlResponse response = urlShortenerService.createShortUrl(urlRequest);
         return ResponseEntity.ok(response);
     }
@@ -34,14 +35,11 @@ public class UrlShortenerController {
     @GetMapping("/{shortUrl}")
     public ResponseEntity<UrlResponse> redirectToOriginalUrl(@PathVariable String shortUrl) {
         UrlResponse response = urlShortenerService.getOriginalUrl(shortUrl);
-
-
         UrlMapping urlMapping = (UrlMapping) response.getData();
         if (urlMapping == null || urlMapping.getOriginalUrl() == null) {
             // If URL is expired or not found
             return new ResponseEntity<>(response, HttpStatus.GONE);
         }
-
         // Redirect to the original URL if found and valid
         return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(urlMapping.getOriginalUrl())).build();
     }
@@ -65,6 +63,15 @@ public class UrlShortenerController {
 
         return ResponseEntity.ok(urlShortenerService.getAllUrlWithPaginationAndSorting(pageNumber,pageSize,sortBy,dir));
 
+    }
+
+
+    @GetMapping("/user/urls")
+    public ResponseEntity<UrlResponse> getUserUrls() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = (User) authentication.getPrincipal();
+
+        return new ResponseEntity<>( urlShortenerService.getUrlsByUser(user), HttpStatus.OK);
     }
 
 }
